@@ -3,12 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  //docker run -it -p 3000:3000 -v $(pwd):/app 10a7bb9e89a5
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Hello World! + Hahaha
         </p>
         <a
           className="App-link"
