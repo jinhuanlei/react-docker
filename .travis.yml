@@ -1,4 +1,4 @@
-language: generic 
+language: generic
 sudo: required
 services:
     - docker
@@ -8,3 +8,16 @@ before_install:
 
 script:
     - docker run -e CI=true jlei/react-docker npm run test
+
+# ReactDocker-env.eba-npq3apkp.us-east-2.elasticbeanstalk.com
+deploy:
+    provider: elasticbeanstalk
+    region: "us-east-2"
+    app: "react-docker"
+    env: "ReactDocker-env"
+    bucket_name: "elasticbeanstalk-us-east-2-454525226307" # docker stored in the s3
+    bucket_path: "react-docker" # same with app name
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
